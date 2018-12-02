@@ -1,14 +1,20 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "react-grid-test",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "http-serve": "1.0.1",
+    "ramda": "0.26.1",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-scripts": "2.1.1",
+    "styled-components": "4.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "server": "http-serve --cors api/data",
+    "server:daemon": "npm run server &",
+    "client": "react-scripts start",
+    "start": "npm run server:daemon && npm run client",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

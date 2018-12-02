@@ -1,44 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React grid test
 
-## Available Scripts
+_This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
 
-In the project directory, you can run:
+This project aims to answer this react grid technical test/challenge:
+https://gist.github.com/barnaby/1e025c5aede6d205faa416b76c33fe22
 
-### `npm start`
+## Install
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Start
 
-### `npm test`
+It will launch both the node server with `http-serve` and the webpack dev server for the client with `react-scripts`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm start
+```
 
-### `npm run build`
+#### Server + Client
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you want to start the server & client in two different terminal tabs, you can launch them separately
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+npm run server
+npm run client
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Data
 
-### `npm run eject`
+The data is a JSON Array returning 200 000 lines of users:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+ {
+   "date": "09/09/1998",
+   "email": "kasi@nibanav.hk",
+   "first": "Ella",
+   "last": "Phelps",
+   "age": 41,
+   "city": "Azehopor",
+   "country": "YT"
+ }
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### DataGrid
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+DataGrid is a react component which requires 2 props:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- data
+- columns
 
-## Learn More
+In this case, columns are defined like this (in `config.js`):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+ [
+  'date',
+  'email',
+  'first',
+  'last',
+  'age',
+  'city',
+  'country',
+]
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## test
+
+```
+npm test
+```
+
+But there's no test currently.. :(
+
+## build
+
+```
+npm run build
+```
